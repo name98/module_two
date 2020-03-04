@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ModuleTwo</string>
+    <string name="favorites">Избранное</string>
+    <string name="transfers">Платежи и переводы</string>
+    <string name="useful">Полезное</string>
+    <string name="logo">LOGO</string>
+    <string name="add_coins">Пополнить кошелек</string>
+    <string name="main">Главная</string>
+    <string name="cards">Карты</string>
+    <string name="history">История</string>
+    <string name="cabinet">Профиль</string>
+    <string name="search">Поиск</string>
+</resources>

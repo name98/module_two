@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/activity_main_bottom_navigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="90dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/search_pane"
+                    android:drawableStart="@drawable/ic_search_grey"
+                    android:hint="@string/search"
+                    android:inputType="textVisiblePassword"
+                    android:maxLines="1"
+                    android:paddingStart="7dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/activity_main_notifications_image_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="Autofill,RtlSymmetry" />
+
+                <ImageView
+                    android:id="@+id/activity_main_notifications_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="21dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/logo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_notifications_none_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.chauthai.overscroll.RecyclerViewBouncy
+                android:id="@+id/activity_main_cards_recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:listitem="@layout/transfers_item" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:text="@string/favorites" />
+
+            <com.chauthai.overscroll.RecyclerViewBouncy
+                android:id="@+id/activity_main_favorites_recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/transfers_item" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:text="@string/transfers" />
+
+            <com.chauthai.overscroll.RecyclerViewBouncy
+                android:id="@+id/activity_main_transfers_recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                tools:ignore="RtlSymmetry"
+                tools:listitem="@layout/favorites_item" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:text="@string/useful" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/activity_main_useful_recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                tools:listitem="@tools:sample/avatars" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/activity_main_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_navigation_background"
+        app:itemIconTint="@color/bottom_items_state_list"
+        app:itemTextColor="@color/bottom_items_state_list"
+        app:menu="@menu/bot_menu" />
+
+</RelativeLayout>
